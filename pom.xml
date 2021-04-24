@@ -10,16 +10,16 @@
 	</parent>
 
 	<groupId>ingjulianvega.ximic</groupId>
-	<artifactId>mssc-asu-recommentation-type</artifactId>
+	<artifactId>mssc-asu-recommendation-type</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mssc-asu-recommentation-type</name>
+	<name>mssc-asu-recommendation-type</name>
 	<description>ASU recommendation type microservice (tipo de recomendación)</description>
 
 	<properties>
 		<!--set this to your docker acct name-->
 		<docker.image.prefix>ingjulianvega</docker.image.prefix>
 		<!--Set to name of project-->
-		<docker.image.name>mssc-asu-duration</docker.image.name>
+		<docker.image.name>mssc-asu-recommendation-type</docker.image.name>
 	</properties>
 
 	<dependencies>
