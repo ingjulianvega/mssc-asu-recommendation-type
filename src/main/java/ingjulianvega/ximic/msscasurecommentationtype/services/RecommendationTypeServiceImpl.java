@@ -29,7 +29,7 @@ public class RecommendationTypeServiceImpl implements RecommendationTypeService 
         log.debug("get()...");
         return RecommendationTypeList
                 .builder()
-                .bodyPartList(recommendationTypeMapper.recommendationTypeEntityListToRecommendationTypeDtoList(recommendationTypeRepository.findAll()))
+                .bodyPartList(recommendationTypeMapper.recommendationTypeEntityListToRecommendationTypeDtoList(recommendationTypeRepository.findAllByOrderByName()))
                 .build();
     }
 

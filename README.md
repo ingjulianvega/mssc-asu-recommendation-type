@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/ingjulianvega/mssc-asu-recommendation-type.svg?style=svg)](https://circleci.com/gh/ingjulianvega/mssc-asu-recommendation-type)
 
-# ASU evidence type management microservice
+# ASU recommendation type management microservice
 
 ### BOM
 
