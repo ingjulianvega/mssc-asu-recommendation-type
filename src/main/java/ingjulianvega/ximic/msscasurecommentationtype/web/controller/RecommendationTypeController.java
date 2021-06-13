@@ -21,8 +21,8 @@ public class RecommendationTypeController implements RecommendationTypeI {
     private final RecommendationTypeService recommendationTypeService;
 
     @Override
-    public ResponseEntity<RecommendationTypeList> get() {
-        return new ResponseEntity<>(recommendationTypeService.get(), HttpStatus.OK);
+    public ResponseEntity<RecommendationTypeList> get(Boolean usingCache) {
+        return new ResponseEntity<>(recommendationTypeService.get(usingCache), HttpStatus.OK);
     }
 
     @Override

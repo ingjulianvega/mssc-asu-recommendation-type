@@ -8,7 +8,7 @@ import ingjulianvega.ximic.msscasurecommentationtype.web.model.RecommendationTyp
 import java.util.UUID;
 
 public interface RecommendationTypeService {
-    RecommendationTypeList get();
+    RecommendationTypeList get(Boolean usingCache);
 
     RecommendationTypeDto getById(UUID id);
 

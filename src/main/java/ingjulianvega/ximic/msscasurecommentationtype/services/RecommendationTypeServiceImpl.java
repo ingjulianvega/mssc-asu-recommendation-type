@@ -23,9 +23,9 @@ public class RecommendationTypeServiceImpl implements RecommendationTypeService 
     private final RecommendationTypeRepository recommendationTypeRepository;
     private final RecommendationTypeMapper recommendationTypeMapper;
 
-    @Cacheable(cacheNames = "recommendationTypeListCache")
+    @Cacheable(cacheNames = "recommendationTypeListCache", condition = "#usingCache == false")
     @Override
-    public RecommendationTypeList get() {
+    public RecommendationTypeList get(Boolean usingCache) {
         log.debug("get()...");
         return RecommendationTypeList
                 .builder()
