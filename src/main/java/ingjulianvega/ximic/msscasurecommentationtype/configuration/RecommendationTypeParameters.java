@@ -11,14 +11,5 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "recommendation-type")
 public class RecommendationTypeParameters {
 
-    private String success;
-    private String prefix;
-    private Error error;
-    private String channelId;
-
-    @Getter
-    @Setter
-    public static class Error {
-        private String general;
-    }
+    private String api;
 }
