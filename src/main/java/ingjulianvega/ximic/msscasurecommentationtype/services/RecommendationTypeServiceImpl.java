@@ -11,6 +11,7 @@ import ingjulianvega.ximic.msscasurecommentationtype.web.model.RecommendationTyp
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -39,7 +40,14 @@ public class RecommendationTypeServiceImpl implements RecommendationTypeService 
         log.debug("getById()...");
         return recommendationTypeMapper.recommendationTypeEntityToRecommendationTypeDto(
                 recommendationTypeRepository.findById(id)
-                        .orElseThrow(() -> new RecommendationTypeException(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND, "")));
+                        .orElseThrow(() -> RecommendationTypeException
+                                .builder()
+                                .httpStatus(HttpStatus.BAD_REQUEST)
+                                .apiCode(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_API_CODE)
+                                .error(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_ERROR)
+                                .message(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_MESSAGE)
+                                .solution(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_SOLUTION)
+                                .build()));
     }
 
     @Override
@@ -58,7 +66,14 @@ public class RecommendationTypeServiceImpl implements RecommendationTypeService 
     public void updateById(UUID id, RecommendationType recommendationType) {
         log.debug("updateById...");
         RecommendationTypeEntity evidenceEntity = recommendationTypeRepository.findById(id)
-                .orElseThrow(() -> new RecommendationTypeException(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND, ""));
+                .orElseThrow(() -> RecommendationTypeException
+                        .builder()
+                        .httpStatus(HttpStatus.BAD_REQUEST)
+                        .apiCode(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_API_CODE)
+                        .error(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_ERROR)
+                        .message(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_MESSAGE)
+                        .solution(ErrorCodeMessages.RECOMMENDATION_TYPE_NOT_FOUND_SOLUTION)
+                        .build());
 
         evidenceEntity.setName(recommendationType.getName());
 
